@@ -87,9 +87,26 @@
                 <h4>Add Train</h4>
             </div>
             <form>
-                <div class="form-group"></div>
+                <div class="form-group">
+                    <label for="exampleInputTrainName">Name of Train</label>
+                    <input type="text" class="form-control" id="search-name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputDestination">Destination</label>
+                    <input type="text" class="form-control" id="search-destination" placeholder>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFirstTrain">First Train Time (HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="search-time" placeholder="HH:mm">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFrequency">Frequency (min)</label>
+                    <input type="text" class="form-control" id="search-frequency" placeholder>
+                </div>
+                <button id="submit" class="btn btn-default">Submit</button>
             </form>
         </div>
+        <script type="text/javascript" src="assets/javascript/app.js"></script>
     </body>
         
     
