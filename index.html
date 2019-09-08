@@ -1,13 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">  
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>TrainActivity</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    
+    
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+        <!-- Bootstrap CDN-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+        <!-- Firebase Reference -->
+        <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    
+        <!-- Moment -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    
+        <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="assets/style.css">
-        
-        <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
     </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="text-center">Anytime is Train Time</h1>
+                <h2 class="text-center">"CHOO CHOO"</h2>
+            </div>
+            <div class="container-schedule">
+                <div id="train-data">
+                    <h3>Train Schedule</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="train-schedule">
+                            <table class="table" id="train-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name of Train</th>
+                                        <th>Destination</th>
+                                        <th>Frequency</th>
+                                        <th>Next arrival</th>
+                                        <th>Minutes Away</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="train-info">
+                                    <tr>
+                                        <td>Amtrak</td>
+                                        <td>Jacksonville</td>
+                                        <td>11 mins</td>
+                                        <td>11:11</td>
+                                        <td>7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amtrak</td>
+                                        <td>Madison</td>
+                                        <td>11 mins</td>
+                                        <td>10:10</td>
+                                        <td>7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Amtrak</td>
+                                        <td>Tampa/td>
+                                        <td>11 mins</td>
+                                        <td>12:12</td>
+                                        <td>7</td>
+                                    </tr>     
+                                    <tr>
+                                        <td>Amtrak</td>
+                                        <td>Orlando</td>
+                                        <td>11 mins</td>
+                                        <td>12:11</td>
+                                        <td>7</td>
+                                    </tr>       
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-schedule">
+            <div id="heading">
+                <h4>Add Train</h4>
+            </div>
+            <form>
+                <div class="form-group"></div>
+            </form>
+        </div>
+    </body>
+        
+    
 </html>
