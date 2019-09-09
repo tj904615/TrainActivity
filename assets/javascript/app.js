@@ -19,10 +19,7 @@ var firebaseConfig = {
       var firstTrain = moment($("#search-time").val().trim(), "HH:mm").format("X");
       var frequency = $("#search-frequency").val().trim();
 
-      console.log(name);
-      console.log(destination);
-      console.log(firstTrain);
-      console.log(frequency);
+     
 
       var newTrain = {
           name: name,
@@ -30,4 +27,37 @@ var firebaseConfig = {
           firstTrain: firstTrain,
           frequency: frequency,
       };
-  })
+
+      //Upload train data to database
+      database.ref().push(newTrain);
+
+      alert("New train added");
+      
+
+      $("#search-name").val("");
+      $("#search-destination").val("");
+      $("#search-time").val("");
+      $("#search-frequency").val("");
+
+      return false;
+  });
+
+  database.ref().on("child_added", function (childSnapshot, prevChildkey){
+
+    //Store to variable
+    var train = childSnapshot.val().name;
+    var destination = childSnapshot.val().destination;
+    var firstTrain = childSnapshot.val().firstTrain;
+    var frequency = childSnapshot.val().frequency;
+
+    var currentTime = moment();
+
+    var differentTime = moment().different(moment.unix(firstTrain), "minutes");
+    var timeRemainder = differentTime % frequency;
+    var minutes = frequency - timeRemainder;
+    var nextTrainArrival = moment().add(minuts, "m").format("HH:mm");
+
+    //Append train info to table
+    $("#train-table > tbody").append("<tr><td>" + train + "</td><td>" + destination + "</td><td>" + frequency + "mins"
+    + "</td><td>" + nextTrainArrival + "</td><td>" + minutes + "</td></tr>");
+  });
